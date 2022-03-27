@@ -26,6 +26,16 @@
   `$$ J(\theta_0,\theta_1) = \sum_{i=0}^2 \theta_0 * \theta_1 $$`
 </section>
 
+<section>
+	<h2>The Lorenz Equations</h2>
+	\[\begin{aligned}
+	\dot{x} &amp; = \sigma(y-x) \\
+	\dot{y} &amp; = \rho x - y - xz \\
+	\dot{z} &amp; = -\beta z + xy
+	\end{aligned} \]
+</section>
+
+
 <section data-markdown>
 <textarea data-template>
 ## Slide 3
@@ -73,7 +83,7 @@ z
 				hash: true,
 
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
 			});
 		</script>
 	</body>
