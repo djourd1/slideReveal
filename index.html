@@ -17,6 +17,8 @@
 	<style type="text/css">
 		p { text-align: left; }
 		</style>
+
+
 <body>
 
 		<div class="reveal">
@@ -94,7 +96,11 @@ $$Income_i = \beta_0 + \beta_a Age_i + \beta_g Gender_i + \beta_e Education_i $$
 
 
 
+<section id="slide-org4881a43">
+	<h3 id="org4881a43">A Sample Quiz</h3>
+	<script data-quiz src="./quizzes/dummy-quiz.js"></script>
 
+</section>
 
 <section>
 	<h2>The Lorenz Equations</h2>
@@ -106,19 +112,21 @@ $$Income_i = \beta_0 + \beta_a Age_i + \beta_g Gender_i + \beta_e Education_i $$
 </section>
 
 
-<section data-markdown>
-<textarea data-template>
-## Slide 3
-
-+ A paragraph with some text and a [link](http://hakim.se).
-+ A second paragraph
-+ `$ J(\theta_0,\theta_1) = \sum_{i=0} $`
----
-## Slide 4
----
-## Slide 5
-</textarea>
+<section id="slickQuiz">
+    <h1 class="quizName"></h1>
+    <div class="quizArea">
+        <div class="quizHeader">
+            <a class="startQuiz" href="">Get Started!</a>
+        </div>
+    </div>
+    <div class="quizResults">
+        <h3 class="quizScore">You Scored: <span></span></h3>
+        <h3 class="quizLevel"><strong>Ranking:</strong> <span></span></h3>
+        <div class="quizResultsCopy"></div>
+    </div>
 </section>
+
+
 
 <section data-markdown>
 	<textarea data-template>
@@ -144,6 +152,7 @@ z
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
 		<script src="plugin/math/math.js"></script>
+		
 		<script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
@@ -153,8 +162,12 @@ z
 				slideNumber: 'c/t',
 
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ],
+				dependencies: [
+    			{ src: 'plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({}); } }
+				  ]
 			});
 		</script>
 	</body>
 </html>
+
