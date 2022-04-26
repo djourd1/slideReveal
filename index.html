@@ -13,7 +13,11 @@
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 	</head>
-	<body>
+
+	<style type="text/css">
+		p { text-align: left; }
+		</style>
+<body>
 
 		<div class="reveal">
 			<div class="slides">
@@ -50,13 +54,40 @@
 - When  y is restricted
 - Using Linear Regression can still be done
 
-$$ y_i = \beta_0 + X_i\beta + \varepsilon_i \; \; where \; y \; is \; LDV $$
+$$y_i = \beta_0 + X_i\beta + \varepsilon_i \text{ where y is LDV}$$
 
-### But leads to biases and problems
+---
+## But leads to biases and problems
 
 - Other types of models are developed
 - Several models depending on the type of the LDV considered
-- For this class: *Binary Dependent Variable*
+- For this class: *Binary Dependent Variable* (**Logit**, **Probit** models)
+
+- Different names:
+
+  - **binary**, or **dichotomous** , or **dummy** 
+
+---
+
+## Binary Variables as Explained Variable
+
+- The explained variable is either $0$ or $1$ 
+
+  - Example: Participation in the labor force (**Labor**) explained by **Age**, **Gender**, and **Education*
+  - Person is either in the labor force or not --> *yes* or *no* decision
+  
+  $$Labor_i = \beta_0 + \beta_a Age_i + \beta_g Gender_i + \beta_e Education_i $$
+
+---
+
+$$Labor_i = \beta_0 + Age_i\beta_a + Gender_i\beta_g + Education_i\beta_e $$
+
+Note there are two binary variables: $Labor_i$ and $Gender_i$. 
+The models is LDV because $Labor_i$ is binary, not because $Gender_i$ is binary  
+
+<p class="fragment">For example, if $Income_i$ is a continuous variable, following model is not a BDV:
+$$Income_i = \beta_0 + \beta_a Age_i + \beta_g Gender_i + \beta_e Education_i $$
+</p>
 
 </textarea>			
 </section>
