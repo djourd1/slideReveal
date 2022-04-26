@@ -16,119 +16,26 @@
 
 	<style type="text/css">
 		p { text-align: left; }
-		</style>
+	</style>
 
 
 <body>
 
-		<div class="reveal">
-			<div class="slides">
+<div class="reveal">
+<div class="slides">
 
-<section data-markdown>
-<textarea data-template>
-
-# Introduction
-
-</textarea>			
+<section data-background-color="rgb(70, 70, 255)">
+<h2>Introduction</h2>
 </section>
 
-<section data-markdown>
-<textarea data-template>
-	
-## Limited Dependent Variables 
-
-- Broadly defined as a *dependent* variable whose range of values is *substantively restricted*:
-
-	- it is *dependent* ==> variable to be explained (usually the $y$)
-	- it is *restricted* 
-
----
-## The most common restrictions are:
-
-- **Binary** : $Y \in \{0,1\}$  (e.g. Yes/No variables)
-- **Multinomial**:  $Y \in \{0,1,2, ... ,k\}$  (e.g. multiple choices variables)
-- **Integer**: $Y \in \{0,1,2, ... \}$  (e.g. count variables)
-- **Censored**:  $Y \in \{ Y^*, Y^* \geq 0 \}$  (e.g. use of fertilizer by farmers, wages)
-			
----
-## Business as usual? 
-
-- When  y is restricted
-- Using Linear Regression can still be done
-
-$$y_i = \beta_0 + X_i\beta + \varepsilon_i \text{ where y is LDV}$$
-
----
-## But leads to biases and problems
-
-- Other types of models are developed
-- Several models depending on the type of the LDV considered
-- For this class: *Binary Dependent Variable* (**Logit**, **Probit** models)
-
-- Different names:
-
-  - **binary**, or **dichotomous** , or **dummy** 
-
----
-
-## Binary Variables as Explained Variable
-
-- The explained variable is either $0$ or $1$ 
-
-  - Example: Participation in the labor force (**Labor**) explained by **Age**, **Gender**, and **Education*
-  - Person is either in the labor force or not --> *yes* or *no* decision
-  
-  $$Labor_i = \beta_0 + \beta_a Age_i + \beta_g Gender_i + \beta_e Education_i $$
-
----
-
-$$Labor_i = \beta_0 + Age_i\beta_a + Gender_i\beta_g + Education_i\beta_e $$
-
-Note there are two binary variables: $Labor_i$ and $Gender_i$. 
-The models is LDV because $Labor_i$ is binary, not because $Gender_i$ is binary  
-
-<p class="fragment">For example, if $Income_i$ is a continuous variable, following model is not a BDV:
-$$Income_i = \beta_0 + \beta_a Age_i + \beta_g Gender_i + \beta_e Education_i $$
-</p>
-
-</textarea>			
-</section>
-
-
-
-<section id="slidequiz">
-	<h3 id="slidequiz">A Sample Quiz</h3>
+<section id="quiz1">
 	<script data-quiz src="./quizzes/dummy-quiz.js"></script>
-
-</section>
-
-<section>
-	<h2>The Lorenz Equations</h2>
-	\[\begin{aligned}
-	\dot{x} &amp; = \sigma(y-x) \\
-	\dot{y} &amp; = \rho x - y - xz \\
-	\dot{z} &amp; = -\beta z + xy
-	\end{aligned} \]
 </section>
 
 
-
-
-<section data-markdown>
-	<textarea data-template>
-
-```r [1-2|3|4]
-x <- 1
-y <- 2
-(z <- sin(x*y))
-z
-```
-	</textarea>
-  </section>
-
-  <section data-background-color="rgb(70, 70, 255)">
+<section data-background-color="rgb(70, 70, 255)">
 	<h2>🐳</h2>
-  </section>
+</section>
 
 </div>
 </div>
@@ -150,7 +57,7 @@ z
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ],
 				dependencies: [
-    			{ src: 'plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({}); } }
+    			{ src: 'plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({skipStartButton: true}); } }
 				  ]
 			});
 		</script>

@@ -1,7 +1,7 @@
 quiz = {
     "info": {
         "name":    "",
-        "main":    "Think you're smart enough to be on Jeopardy? Find out with this super crazy knowledge quiz!",
+        "main":    "",
         "level1":  "Jeopardy Ready",
         "level2":  "Jeopardy Contender",
         "level3":  "Jeopardy Amateur",
