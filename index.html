@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
 
 		<title>reveal.js</title>
 
@@ -12,41 +12,166 @@
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
+	
+	
+			...
+		<script src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/quizdown.js"> </script>
+		<script>quizdown.init();</script>
+		
+	
 
 	<style type="text/css">
-		p { text-align: left; }
-	</style>
+	p { text-align: left; }
+	</style>	
 
+</head>
 
 <body>
-
 <div class="reveal">
 <div class="slides">
 
-<section data-background-color="rgb(70, 70, 255)">
-<h2>Introduction</h2>
+<section data-background-color="rgb(70, 70, 255)" >
+
+<h3>Limited Dependent Variable Models</h3>
+
+<h4>Dr. Damien Jourdain</h4>
+<h5>damien.jourdain@cirad.fr</h5>
 
 
 </section>
 
-<section data-background="audio/jungle.jpg" data-audio-text="With audio slideshows" >
-	<p>
-		With audio slideshows you can add recorded audio to whatever you want to deliver to your audience. 
-	</p>
-	<p data-audio-src='1.0.ogg'>.	</p>
+
+<section data-markdown>
+<textarea data-template>
+
+
+### Limited Dependent Variable Models
+<audio controls src="audio/slide1.mp3">
+            Your browser does not support the <code>audio</code> element.
+</audio>
+
+- Broadly defined as regressions models where:
+	- the *dependent* variable 
+	- range of values *substantively restricted*
+	
+	
+---
+### Different types of LDV models
+<audio controls data-src="audio/slide2_1.mp3">
+	Your browser does not support the <code>audio</code> element.
+</audio>
+
+---
+### Binary DV
+<h6><audio controls src="audio/slide2_2.mp3"> </audio></h6>
+
+
+Binary : $Y \in \{ 1,0 \}$  (e.g. Yes/No)
+<br>
+<br>
+<small>
+<a href="http://dx.doi.org/10.1016/j.techfore.2015.03.016" target="_blank">Click: Srisopaporn, S., 
+	Jourdain, D., Perret, S., & Shivakoti, G. (2015) Adoption and continued participation in a public Good Agricultural Practices program: the case of rice farmers 
+	in the Central Plains of Thailand. 
+	Technological Forecasting and Social Change, 96 (2015), 242-253.  
+</a>
+</small>
+
+---
+### Multinomial DV
+<h6><audio controls src="audio/slide2_3.mp3"></audio></h6>
+
+$Y \in \{0,1,2, ... ,k\}$  (e.g. multiple choices variables)
+<br>
+
+<small>
+<a href="https://doi.org/10.1108/AFR-06-2019-0061" target="_blank">Click: Dang, H.D., Dam, A.H.T., Pham, T.T. and Nguyen, T.M.T. (2020), 
+	Determinants of credit demand of farmers in Lam Dong, Vietnam: A comparison of machine 
+	learning and multinomial logit, Agricultural Finance Review, 
+	Vol. 80 No. 2, pp. 255-274. 
+</a>
+</small> 
+
+
+---
+### Integer DV
+<h6><audio controls src="audio/slide2_4.mp3"></audio></h6>
+
+- Integer: $Y \in \{0,1,2, ... \}$  (e.g. count variables)
+
+	<small>
+	<a href="https://doi.org/10.1016/j.ecolecon.2011.06.008"target="_blank">Click: Kouser, S. and Qaim, M., 2011. Impact of Bt cotton on pesticide poisoning in smallholder agriculture: 
+		A panel data analysis. Ecological Economics, 70(11), pp.2105-2113.</a>
+	</small>
+---
+### Corner solutions DV
+<audio controls src="audio/slide2_5.mp3">
+	Your browser does not support the <code>audio</code> element.
+</audio>
+
+$Y \in \{ Y^*, Y^* \geq 0 \}$  (e.g. use of fertilizer by farmers, wages)
+
+<small>
+<a href="https://doi.org/10.1016/j.worlddev.2017.11.012" target="_blank">Click: Haider, H., Smale, M. and Theriault, V., 2018. 
+	Intensification and intrahousehold decisions: Fertilizer adoption in Burkina Faso. 
+	World Development, 105, pp.310-320.</a>
+</small>
+
+---
+### Business as usual? 
+<h6><audio controls src="audio/slide3_Business.mp3"></audio></h6>	
+$$y_i = \beta_0 + X_i\beta + \varepsilon_i \text{ where y is LDV}$$
+
+- Using Linear Regression can still be done
+- But leads to biases and problems
+	- Other types of models are developed
+	- Several models depending on the type of the LDV considered
+---
+### Different types of LDV models
+<h6><audio controls src="audio/slide4_LDV.mp3"></audio></h6>	
+
+- Binary  ==> Logit, Probit
+- Multinomial ==> Multinomial Logit or Probit
+- Integer ==> Poisson
+- Corner solutions ==> Tobit
+
+- Other models also exist due to censoring of data
+
+---
+	
+### Explained variable is binary
+<h6><audio controls src="audio/slide5_BDV.mp3"></audio></h6>	
+
+- The explained variable is either $0$ or $1$ 
+	
+  - Example: Participation in the labor force (**Labor**) explained by **Age**, **Gender**, and **Education**
+  - In the labor force or not --> *yes* or *no* decision
+	  
+ $$Labor_i = \beta_0 + \beta_a Age_i + \beta_g Gender_i + \beta_e Education_i $$
+	
+---
+### Explained variable is binary (2)
+<h6><audio controls src="audio/slide6.mp3"></audio></h6>
+
+$$Labor_i = \beta_0 + \beta_a Age_i + \beta_g Gender_i + \beta_e  Education_i$$
+$$Income_i = \beta_0 + \beta_a Age_i + \beta_g Gender_i + \beta_e Education_i $$
+
++ 2 binary variables: $Labor_i$ and $Gender_i$. 
++ Model 1 is BDV because $Labor_i$ is binary, not because $Gender_i$ is binary  
++ If $Income_i$ is a continuous variable, 2nd model is not a BDV
+
+---
+### Conclusion
+<h6><audio controls src="audio/slide7_wrap.mp3"></audio></h6>
+
++ LDV model needed when the **explained** variable is restricted
++ Different types of models exist to avoid biased results
++ We will concentrate on the binary dependent variable models
+	
+</textarea>			
 </section>
-
-<section id="quiz1">
-	<script data-quiz src="./quizzes/dummy-quiz.js"></script>
-</section>
-
-
-<section data-background-color="rgb(70, 70, 255)">
-	<h2>🐳</h2>
-</section>
-
 </div>
+
 </div>
 
 		<script src="dist/reveal.js"></script>
@@ -54,9 +179,6 @@
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
 		<script src="plugin/math/math.js"></script>
-		<script src="plugin/audio-slideshow/plugin.js"></script>
-		<script src="plugin/audio-slideshow/recorder.js"></script>
-		<script src="plugin/audio-slideshow/RecordRTC.js"></script>
 		
 		<script>
 			// More info about initialization & config:
@@ -67,7 +189,7 @@
 				slideNumber: 'c/t',
 
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX, RevealAudioSlideshow ],
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX],
 				dependencies: [
     			{ src: 'plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({skipStartButton: true}); } }
 				  ],
